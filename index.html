@@ -8,6 +8,27 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
     <style>
+        .gallery-container {
+    display: flex;          /* Arrange images in a row */
+    justify-content: center; /* Center the images */
+    gap: 15px;              /* Space between images */
+    flex-wrap: wrap;        /* Wrap images if the screen is small */
+}
+
+.gallery-container img {
+    width: 300px;           /* Set image width */
+    height: auto;           /* Maintain aspect ratio */
+    border: 2px solid cyan; /* Add a futuristic border */
+    border-radius: 10px;    /* Slightly rounded edges */
+    transition: 0.3s;
+}
+
+.gallery-container img:hover {
+    transform: scale(1.05); /* Slight zoom effect on hover */
+    border-color: lime;
+    box-shadow: 0 0 10px lime;
+}
+
         body, .hero, .section, footer {
     background-color: #0a0a0a;
     color: white;
