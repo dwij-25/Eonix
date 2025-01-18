@@ -48,7 +48,49 @@
 
 
         /* Navigation Bar */
+        /* Style the navigation bar */
+.navbar {
+    display: flex;  /* Align items in a row */
+    justify-content: space-between; /* Space between logo & menu */
+    align-items: center; /* Align vertically */
+    padding: 10px 20px;
+    background-color: #0a0a0a; /* Dark header */
+}
+
+/* Style the logo */
+.logo img {
+    width: 80px;  /* Adjust size */
+    height: auto;
+    max-width: 100%;
+}
+
+/* Style the navigation menu */
+.nav-menu {
+    list-style: none;
+    display: flex; /* Make menu items appear side by side */
+    gap: 20px; /* Space between items */
+}
+
+/* Style individual menu items */
+.nav-menu li {
+    display: inline-block;
+}
+
+/* Style menu links */
+.nav-menu a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.nav-menu a:hover {
+    color: cyan; /* Futuristic hover effect */
+}
+
         nav {
+            
             background: rgba(0, 0, 0, 0.8);
             padding: 15px;
             display: flex;
