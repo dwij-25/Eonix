@@ -3,84 +3,206 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RFQ Submission Form</title>
+    <title>Eonix - Robotics Workshop</title>
     <style>
+        /* Global Styles */
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #0a0a0a;
+            color: #fff;
             text-align: center;
         }
-        .container {
-            width: 50%;
-            margin: auto;
-            background: white;
-            padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0px 0px 10px gray;
-        }
-        input, textarea {
+
+        /* Navigation Bar */
+        nav {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 15px;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            position: fixed;
             width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            border: 1px solid #ccc;
-            border-radius: 5px;
+            top: 0;
+            left: 0;
+            z-index: 1000;
         }
-        button {
-            background: blue;
-            color: white;
-            padding: 10px;
+
+        nav a {
+            color: cyan;
+            text-decoration: none;
+            font-size: 18px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: lime;
+            text-shadow: 0 0 5px lime;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: url('https://source.unsplash.com/1600x900/?technology,robot') center/cover no-repeat;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            padding: 20px;
+        }
+
+        .hero h1 {
+            font-size: 50px;
+            background: linear-gradient(45deg, cyan, magenta);
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin-top: 10px;
+        }
+
+        .btn {
+            margin-top: 20px;
+            padding: 12px 24px;
+            background: cyan;
+            color: black;
             border: none;
             cursor: pointer;
-            width: 100%;
+            font-size: 18px;
+            transition: 0.3s;
         }
-        button:hover {
-            background: darkblue;
+
+        .btn:hover {
+            background: lime;
+            box-shadow: 0 0 10px lime;
+        }
+
+        /* Sections */
+        .section {
+            padding: 80px 20px;
+        }
+
+        .section h2 {
+            font-size: 40px;
+            text-transform: uppercase;
+        }
+
+        .grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .card {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+            width: 300px;
+            text-align: center;
+            border: 2px solid cyan;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            border-color: lime;
+            box-shadow: 0 0 15px lime;
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(0, 0, 0, 0.9);
+            padding: 20px;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        /* Animation */
+        @keyframes glow {
+            0% { text-shadow: 0 0 5px cyan; }
+            50% { text-shadow: 0 0 15px cyan; }
+            100% { text-shadow: 0 0 5px cyan; }
+        }
+
+        .animated-text {
+            animation: glow 2s infinite alternate;
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <h2>Request for Quotation (RFQ) Form</h2>
-        <form id="rfqForm">
-            <label for="company">Company Name:</label>
-            <input type="text" id="company" required>
+    <!-- Navigation -->
+    <nav>
+        <a href="#about">About</a>
+        <a href="#workshop">Workshop</a>
+        <a href="#register">Register</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#contact">Contact</a>
+    </nav>
 
-            <label for="budget">Budget ($):</label>
-            <input type="number" id="budget" required>
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1 class="animated-text">Eonix Robotics Workshop</h1>
+        <p>Build your own Transformer-inspired Line-Follower Robot!</p>
+        <button class="btn">Join Now</button>
+    </section>
 
-            <label for="deadline">Deadline:</label>
-            <input type="date" id="deadline" required>
+    <!-- About Section -->
+    <section id="about" class="section">
+        <h2>About Eonix</h2>
+        <p>Welcome to Eonix - the ultimate robotics workshop where creativity meets technology.</p>
+    </section>
 
-            <label for="scope">Project Scope:</label>
-            <textarea id="scope" rows="4" required></textarea>
+    <!-- Workshop Details -->
+    <section id="workshop" class="section">
+        <h2>Workshop Details</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>Hands-on Learning</h3>
+                <p>Get practical experience in robotics & AI.</p>
+            </div>
+            <div class="card">
+                <h3>Expert Mentors</h3>
+                <p>Learn from experienced professionals in the field.</p>
+            </div>
+            <div class="card">
+                <h3>Transformers Theme</h3>
+                <p>Build robots with a futuristic design!</p>
+            </div>
+        </div>
+    </section>
 
-            <button type="button" onclick="generateRFQ()">Submit RFQ</button>
-        </form>
+    <!-- Registration -->
+    <section id="register" class="section">
+        <h2>Register Now</h2>
+        <button class="btn">Sign Up</button>
+    </section>
 
-        <h3>Generated RFQ Summary:</h3>
-        <pre id="output"></pre>
-    </div>
+    <!-- Gallery -->
+    <section id="gallery" class="section">
+        <h2>Gallery</h2>
+        <p>Photos from previous workshops.</p>
+    </section>
 
+    <!-- Contact -->
+    <section id="contact" class="section">
+        <h2>Contact Us</h2>
+        <p>Email: contact@eonix.com</p>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 Eonix Robotics Workshop | All Rights Reserved</p>
+    </footer>
+
+    <!-- JavaScript -->
     <script>
-        function generateRFQ() {
-            let company = document.getElementById("company").value;
-            let budget = document.getElementById("budget").value;
-            let deadline = document.getElementById("deadline").value;
-            let scope = document.getElementById("scope").value;
-
-            if (company && budget && deadline && scope) {
-                let summary = `📌 RFQ Summary:
-                \n🔹 Company: ${company}
-                \n💰 Budget: $${budget}
-                \n📅 Deadline: ${deadline}
-                \n📄 Scope: ${scope}`;
-                
-                document.getElementById("output").innerText = summary;
-            } else {
-                alert("Please fill all fields.");
-            }
-        }
+        document.querySelector('.btn').addEventListener('click', function() {
+            alert("Registrations Opening Soon!");
+        });
     </script>
 
 </body>
