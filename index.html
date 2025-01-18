@@ -3,44 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Transformers Robotics Workshop</title>
-    <link rel="stylesheet" href="style.css">
+    <title>RFQ Submission Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+        .container {
+            width: 50%;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px gray;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background: blue;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+        }
+        button:hover {
+            background: darkblue;
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <h1>Welcome to the Transformers Robotics Workshop</h1>
-        <nav>
-            <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#schedule">Schedule</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
 
-    <section id="about">
-        <h2>About the Workshop</h2>
-        <p>Learn how to build your own line-following robot with a **Transformers** theme!</p>
-    </section>
+    <div class="container">
+        <h2>Request for Quotation (RFQ) Form</h2>
+        <form id="rfqForm">
+            <label for="company">Company Name:</label>
+            <input type="text" id="company" required>
 
-    <section id="schedule">
-        <h2>Event Schedule</h2>
-        <ul>
-            <li>Day 1: Introduction & Setup</li>
-            <li>Day 2: Building the Robot</li>
-            <li>Day 3: Testing & Completion</li>
-        </ul>
-    </section>
+            <label for="budget">Budget ($):</label>
+            <input type="number" id="budget" required>
 
-    <section id="contact">
-        <h2>Contact Us</h2>
-        <p>Email: <a href="mailto:workshop@transformers.com">workshop@transformers.com</a></p>
-    </section>
+            <label for="deadline">Deadline:</label>
+            <input type="date" id="deadline" required>
 
-    <footer>
-        <p>&copy; 2025 Transformers Robotics Workshop</p>
-    </footer>
+            <label for="scope">Project Scope:</label>
+            <textarea id="scope" rows="4" required></textarea>
 
-    <script src="script.js"></script>
+            <button type="button" onclick="generateRFQ()">Submit RFQ</button>
+        </form>
+
+        <h3>Generated RFQ Summary:</h3>
+        <pre id="output"></pre>
+    </div>
+
+    <script>
+        function generateRFQ() {
+            let company = document.getElementById("company").value;
+            let budget = document.getElementById("budget").value;
+            let deadline = document.getElementById("deadline").value;
+            let scope = document.getElementById("scope").value;
+
+            if (company && budget && deadline && scope) {
+                let summary = `📌 RFQ Summary:
+                \n🔹 Company: ${company}
+                \n💰 Budget: $${budget}
+                \n📅 Deadline: ${deadline}
+                \n📄 Scope: ${scope}`;
+                
+                document.getElementById("output").innerText = summary;
+            } else {
+                alert("Please fill all fields.");
+            }
+        }
+    </script>
+
 </body>
 </html>
