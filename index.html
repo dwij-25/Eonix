@@ -48,47 +48,47 @@
 
 
         /* Navigation Bar */
-        /* Style the navigation bar */
+/* Navbar Fix */
 .navbar {
-    display: flex;  /* Align items in a row */
-    justify-content: space-between; /* Space between logo & menu */
-    align-items: center; /* Align vertically */
+    display: flex;
+    align-items: center; /* Align logo & menu vertically */
+    justify-content: flex-start; /* Align items to the left */
     padding: 10px 20px;
-    background-color: #0a0a0a; /* Dark header */
+    background-color: #0a0a0a;
 }
 
-/* Style the logo */
+/* Reduce space between logo & menu */
+.logo {
+    margin-right: 20px; /* Adjust spacing */
+}
+
+/* Adjust the logo size */
 .logo img {
-    width: 80px;  /* Adjust size */
+    width: 70px;  /* Smaller size */
     height: auto;
-    max-width: 100%;
 }
 
-/* Style the navigation menu */
+/* Make menu items appear in one row */
 .nav-menu {
     list-style: none;
-    display: flex; /* Make menu items appear side by side */
-    gap: 20px; /* Space between items */
-}
-
-/* Style individual menu items */
-.nav-menu li {
-    display: inline-block;
+    display: flex;
+    gap: 15px; /* Reduce gap between menu items */
+    flex-wrap: wrap; /* Prevents items from going off-screen */
 }
 
 /* Style menu links */
 .nav-menu a {
     text-decoration: none;
     color: white;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: bold;
     transition: 0.3s;
+    padding: 5px 10px; /* Add padding for better spacing */
 }
 
 .nav-menu a:hover {
-    color: cyan; /* Futuristic hover effect */
+    color: cyan;
 }
-
         nav {
             
             background: rgba(0, 0, 0, 0.8);
