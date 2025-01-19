@@ -237,11 +237,12 @@
 
 
     <!-- Hero Section -->
-    <section class="hero">
-        <h1 class="animated-text">SAL Robotics Workshop</h1>
-        <p>Build your own Line-Follower Robot!</p>
-        <button class="btn">Join Now</button>
-    </section>
+    <section id="home" class="hero">
+    <h1 class="animated-text">SAL Robotics Workshop</h1>
+    <p>Build your own Line-Follower Robot!</p>
+    <!-- Join Now Button with onclick event to scroll to Register Box -->
+    <button class="btn" onclick="scrollToRegister()">Join Now</button>
+</section>
 
     <!-- About Section -->
     <section id="about" class="section">
@@ -434,7 +435,12 @@
         }
         window.onload = typeEffect;
     </script>
-
+<script>
+    // Function for smooth scroll to Register Box
+    function scrollToRegister() {
+        document.getElementById('register-box').scrollIntoView({ behavior: 'smooth' });
+    }
+</script>
 
 </body>
 </html>
