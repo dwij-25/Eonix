@@ -71,10 +71,18 @@
 }
 
 /* Adjust Logo Size */
+/* Adjust Logo Size (Responsive) */
 .logo img {
-    width: 100px;  /* Increase logo size */
+    width: 120px;  /* Default size */
     height: auto;
     display: block;
+}
+
+/* Make Logo Smaller on Mobile */
+@media (max-width: 768px) {
+    .logo img {
+        width: 80px;  /* Reduce size for small screens */
+    }
 }
 
 /* Wrap Menu in a Box */
