@@ -10,9 +10,9 @@
     <style>
         /* Adjust the logo size */
 .logo img {
-    width: 100px;  /* Set a reasonable width */
+    width: 200px;  /* Set a reasonable width */
     height: auto; /* Maintain aspect ratio */
-    max-width: 100%; /* Prevent oversized logo */
+    max-width: 150%; /* Prevent oversized logo */
 }
 
         .gallery-container {
@@ -48,95 +48,47 @@
 
 
         /* Navigation Bar */
-/* Navbar Wrapper (Box Layout) */
-/* Navbar: Reduce Space Between Logo & Menu */
+/* Navbar Fix */
 .navbar {
     display: flex;
-    align-items: center;
-    justify-content: space-between; /* Reduce space between logo & menu */
+    align-items: center; /* Align logo & menu vertically */
+    justify-content: flex-start; /* Align items to the left */
     padding: 10px 20px;
-    background-color: #111;
-    border-radius: 0;
-    box-shadow: 0 4px 10px rgba(0, 255, 255, 0.3);
-    width: 100vw;
-    margin: 0;
+    background-color: #0a0a0a;
 }
 
-/* Logo Box - Fix Oversize Issue */
-.logo-box {
-    background: #222; /* Darker box for contrast */
-    padding: 5px 10px; /* Reduce padding to save space */
-    border-radius: 8px; /* Rounded corners */
-    box-shadow: inset 0 0 8px rgba(255, 255, 255, 0.1);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    max-width: 150px; /* ✅ Prevents full-screen logo issue */
-    overflow: hidden; /* Prevents oversized logo */
+/* Reduce space between logo & menu */
+.logo {
+    margin-right: 20px; /* Adjust spacing */
 }
 
-/* Adjust Logo Size */
+/* Adjust the logo size */
 .logo img {
-    width: 100%; /* Makes logo responsive */
-    max-width: 120px; /* ✅ Prevents huge size */
+    width: 70px;  /* Smaller size */
     height: auto;
-    display: block;
 }
 
-/* Make Logo Smaller on Mobile */
-@media (max-width: 768px) {
-    .logo-box {
-        max-width: 100px; /* Reduce size on small screens */
-    }
-    .logo img {
-        max-width: 80px;
-    }
-
-    /* Fix Mobile Menu Stacking */
-    .nav-menu {
-        flex-direction: column;
-        align-items: center;
-    }
-}
-
-/* Wrap Menu in a Box */
-.menu-box {
-    background: #222;
-    padding: 10px;
-    border-radius: 8px;
-    box-shadow: inset 0 0 8px rgba(255, 255, 255, 0.1);
-}
-
-/* Make Menu Horizontal */
-/* Ensure Menu Items Stay Inside Screen */
+/* Make menu items appear in one row */
 .nav-menu {
     list-style: none;
     display: flex;
-    gap: 15px;
+    gap: 15px; /* Reduce gap between menu items */
     flex-wrap: wrap; /* Prevents items from going off-screen */
-    justify-content: center; /* Center menu items */
-}
-    .nav-menu a {
-        display: block;
-        padding: 10px;
-    }
 }
 
-
-/* Style Menu Links */
+/* Style menu links */
 .nav-menu a {
     text-decoration: none;
     color: white;
     font-size: 16px;
     font-weight: bold;
-    padding: 5px 10px;
     transition: 0.3s;
+    padding: 5px 10px; /* Add padding for better spacing */
 }
 
 .nav-menu a:hover {
     color: cyan;
 }
-
         nav {
             
             background: rgba(0, 0, 0, 0.8);
@@ -259,26 +211,19 @@
 <body>
 
     <!-- Navigation -->
- <header>
-   <nav class="navbar">
-    <div class="logo-box">
-        <a href="index.html">
+    <header>
+    <nav class="navbar">
+        <a href="index.html" class="logo">
             <img src="logo.jpg" alt="Team Logo">
         </a>
-    </div>
-
-    <!-- Hamburger Icon for Mobile -->
-    <div class="mobile-menu" onclick="toggleMenu()">☰</div>
-
-    <ul class="nav-menu">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#gallery">Gallery</a></li>
-        <li><a href="#contact">Contact</a></li>
-    </ul>
-</nav>
+        <ul class="nav-menu">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
 </header>
-
 
 
 
@@ -344,10 +289,6 @@
 
     <!-- JavaScript -->
     <script>
-        function toggleMenu() {
-    var menu = document.querySelector(".nav-menu");
-    menu.classList.toggle("active");
-}
         document.querySelector('.btn').addEventListener('click', function() {
             alert("Registrations Opening Soon!");
         });
