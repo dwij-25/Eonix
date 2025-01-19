@@ -140,13 +140,30 @@
 
         /* Hero Section */
         .hero {
-            background: url('https://source.unsplash.com/1600x900/?technology,robot') center/cover no-repeat;
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-            padding: 20px;
+           /* Set background image only for the Home section */
+#home {
+    background: url('bgtry4.jpg') no-repeat center/cover;
+    height: 100vh; /* Full screen height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 20px;
+    position: relative;
+}
+
+/* Optional: Add a semi-transparent overlay for better readability */
+#home::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+    z-index: -1;
+}
+
         }
 
         .hero h1 {
@@ -251,7 +268,7 @@
 
 
     <!-- Hero Section -->
-    <section class="hero">
+    <section id="home" class="hero">
         <h1 class="animated-text">Eonix Robotics Workshop</h1>
         <p>Build your own Transformer-inspired Line-Follower Robot!</p>
         <button class="btn">Join Now</button>
