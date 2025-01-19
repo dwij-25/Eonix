@@ -13,9 +13,11 @@
             font-family: 'Orbitron', sans-serif;
             background-color: #0a0a0a;
             color: white;
+            margin: 0;
+            padding: 0;
         }
 
-        /* Navigation Bar */
+        /* Navbar */
         .navbar {
             display: flex;
             align-items: center;
@@ -30,7 +32,7 @@
         }
 
         .logo img {
-            width: 70px;
+            width: 60px;
             height: auto;
         }
 
@@ -46,19 +48,18 @@
             font-size: 16px;
             font-weight: bold;
             transition: 0.3s;
-            padding: 5px 10px;
         }
 
         .nav-menu a:hover {
             color: cyan;
         }
 
-        /* Mobile Navbar */
-        .menu-toggle {
+        /* Mobile Menu */
+        .hamburger {
             display: none;
             cursor: pointer;
             font-size: 24px;
-            color: cyan;
+            color: white;
         }
 
         @media (max-width: 768px) {
@@ -66,17 +67,17 @@
                 display: none;
                 flex-direction: column;
                 position: absolute;
-                top: 60px;
-                left: 0;
-                width: 100%;
-                background: rgba(10, 10, 10, 0.9);
-                text-align: center;
-                padding: 10px 0;
+                top: 50px;
+                right: 10px;
+                background: rgba(0, 0, 0, 0.9);
+                width: 150px;
+                padding: 10px;
+                border-radius: 5px;
             }
             .nav-menu.active {
                 display: flex;
             }
-            .menu-toggle {
+            .hamburger {
                 display: block;
             }
         }
@@ -98,9 +99,6 @@
             background: linear-gradient(45deg, cyan, magenta);
             -webkit-background-clip: text;
             color: transparent;
-        }
-
-        .animated-text {
             animation: glow 2s infinite alternate;
         }
 
@@ -110,106 +108,86 @@
             100% { text-shadow: 0 0 5px cyan; }
         }
 
-        .btn {
-            margin-top: 20px;
-            padding: 12px 24px;
-            background: cyan;
-            color: black;
-            border: none;
-            cursor: pointer;
-            font-size: 18px;
+        /* Gallery Section */
+        .gallery-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            padding: 20px;
+        }
+
+        .gallery-container img {
+            width: 250px;
+            border: 2px solid cyan;
+            border-radius: 10px;
             transition: 0.3s;
-            position: relative;
-            overflow: hidden;
         }
 
-        .btn::after {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 50%;
-            width: 300%;
-            height: 300%;
-            background: radial-gradient(circle, rgba(0,255,255,0.4) 10%, transparent 50%);
-            transition: all 0.4s;
-            transform: translate(-50%, -50%) scale(0);
+        .gallery-container img:hover {
+            transform: scale(1.05);
+            border-color: lime;
+            box-shadow: 0 0 10px lime;
         }
 
-        .btn:hover::after {
-            transform: translate(-50%, -50%) scale(1);
+        /* Contact Section */
+        .contact {
+            text-align: center;
+            padding: 40px 20px;
         }
 
-        /* Countdown Timer */
-        #countdown {
-            font-size: 20px;
-            color: cyan;
-            margin-top: 10px;
+        /* Footer */
+        footer {
+            background: rgba(0, 0, 0, 0.9);
+            padding: 20px;
+            text-align: center;
+            margin-top: 50px;
         }
     </style>
 </head>
 <body>
     <header>
         <nav class="navbar">
-            <a href="index.html" class="logo">
+            <a href="#" class="logo">
                 <img src="logo.jpg" alt="Team Logo">
             </a>
-            <div class="menu-toggle">☰</div>
             <ul class="nav-menu">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#gallery">Gallery</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
+            <div class="hamburger">☰</div>
         </nav>
     </header>
 
     <section class="hero">
-        <h1 class="animated-text" id="hero-text"></h1>
+        <h1>Eonix Robotics Workshop</h1>
         <p>Build your own Transformer-inspired Line-Follower Robot!</p>
-        <button class="btn">Join Now</button>
     </section>
 
-    <section id="register" class="section">
-        <h2>Register Now</h2>
-        <p id="countdown"></p>
-        <button class="btn">Sign Up</button>
+    <section id="gallery" class="gallery-container">
+        <img src="img1.jpg" alt="Workshop Image 1">
+        <img src="img2.jpg" alt="Workshop Image 2">
+        <img src="img3.jpg" alt="Workshop Image 3">
+        <img src="img4.jpg" alt="Workshop Image 4">
     </section>
+
+    <section id="contact" class="contact">
+        <h2>Contact Us</h2>
+        <p>Email: dwijpancholi@gmail.com</p>
+    </section>
+
+    <footer>
+        <p>© 2025 Eonix Robotics Workshop | All Rights Reserved</p>
+    </footer>
 
     <script>
-        document.querySelector('.menu-toggle').addEventListener('click', function() {
+        document.querySelector('.hamburger').addEventListener('click', function() {
             document.querySelector('.nav-menu').classList.toggle('active');
         });
-
-        function countdownTimer() {
-            const eventDate = new Date("January 20, 2025 23:59:59").getTime();
-            const timer = setInterval(function() {
-                const now = new Date().getTime();
-                const timeLeft = eventDate - now;
-                if (timeLeft <= 0) {
-                    clearInterval(timer);
-                    document.getElementById("countdown").innerHTML = "Registration Closed!";
-                } else {
-                    const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
-                    const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                    const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
-                    const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
-                    document.getElementById("countdown").innerHTML = `Registration Closes In: ${days}d ${hours}h ${minutes}m ${seconds}s`;
-                }
-            }, 1000);
-        }
-        countdownTimer();
-
-        const text = "Eonix Robotics Workshop";
-        let index = 0;
-        function typeEffect() {
-            if (index < text.length) {
-                document.getElementById("hero-text").innerHTML += text.charAt(index);
-                index++;
-                setTimeout(typeEffect, 100);
-            }
-        }
-        window.onload = typeEffect;
     </script>
 </body>
 </html>
+
 
