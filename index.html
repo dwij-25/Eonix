@@ -298,8 +298,39 @@
 
     <!-- JavaScript -->
     <script>
-document.querySelector('.menu-toggle').addEventListener('click', function() { document.querySelector('.nav-menu').classList.toggle('active'); }); function countdownTimer() { const eventDate = new Date("January 20, 2025 23:59:59").getTime(); const timer = setInterval(function() { const now = new Date().getTime(); const timeLeft = eventDate - now; if (timeLeft <= 0) { clearInterval(timer); document.getElementById("countdown").innerHTML = "Registration Closed!"; } else { const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24)); const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)); const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60)); const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000); document.getElementById("countdown").innerHTML = `Registration Closes In: ${days}d ${hours}h ${minutes}m ${seconds}s`; } }, 1000); } countdownTimer(); const text = "Eonix Robotics Workshop"; let index = 0; function typeEffect() { if (index < text.length) { document.getElementById("hero-text").innerHTML += text.charAt(index); index++; setTimeout(typeEffect, 100); } } window.onload = typeEffect;
+   document.querySelector('.menu-toggle').addEventListener('click', function() {
+            document.querySelector('.nav-menu').classList.toggle('active');
         });
+
+        function countdownTimer() {
+            const eventDate = new Date("January 20, 2025 23:59:59").getTime();
+            const timer = setInterval(function() {
+                const now = new Date().getTime();
+                const timeLeft = eventDate - now;
+                if (timeLeft <= 0) {
+                    clearInterval(timer);
+                    document.getElementById("countdown").innerHTML = "Registration Closed!";
+                } else {
+                    const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+                    const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                    const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+                    const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+                    document.getElementById("countdown").innerHTML = `Registration Closes In: ${days}d ${hours}h ${minutes}m ${seconds}s`;
+                }
+            }, 1000);
+        }
+        countdownTimer();
+
+        const text = "Eonix Robotics Workshop";
+        let index = 0;
+        function typeEffect() {
+            if (index < text.length) {
+                document.getElementById("hero-text").innerHTML += text.charAt(index);
+                index++;
+                setTimeout(typeEffect, 100);
+            }
+        }
+        window.onload = typeEffect;
     </script>
 
 </body>
