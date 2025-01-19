@@ -9,11 +9,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
     <style>
         /* Adjust the logo size */
-.logo img {
-    width: 200px;  /* Set a reasonable width */
-    height: auto; /* Maintain aspect ratio */
-    max-width: 150%; /* Prevent oversized logo */
-}
 
         .gallery-container {
     display: flex;          /* Arrange images in a row */
@@ -74,6 +69,20 @@
     display: flex;
     gap: 15px; /* Reduce gap between menu items */
     flex-wrap: wrap; /* Prevents items from going off-screen */
+    /* Media Query for small screens */
+@media (max-width: 768px) {
+    .nav-menu {
+        flex-direction: column;   /* Stack the items vertically */
+        align-items: center;      /* Center-align items */
+        gap: 10px;                /* Add some space between items */
+    }
+
+    /* If you want to adjust other things like font-size of links inside .nav-menu */
+    .nav-menu a {
+        font-size: 18px;          /* Adjust font size for mobile */
+    }
+}
+
 }
 
 /* Style menu links */
