@@ -49,16 +49,17 @@
 
         /* Navigation Bar */
 /* Navbar Wrapper (Box Layout) */
+/* Navbar Fix: Full Width */
 .navbar {
     display: flex;
     align-items: center;
-    justify-content: space-between; /* Space between logo & menu */
+    justify-content: space-between;
     padding: 10px 20px;
-    background-color: #111; /* Dark futuristic background */
-    border-radius: 10px; /* Rounded corners for a modern look */
-    box-shadow: 0 4px 10px rgba(0, 255, 255, 0.3); /* Soft neon glow */
-    margin: 10px auto; /* Center the navbar */
-    width: 90%; /* Adjust width */
+    background-color: #111;
+    border-radius: 0; /* Remove rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 255, 255, 0.3);
+    width: 100vw; /* Extend to full width */
+    margin: 0; /* Remove margin */
 }
 
 /* Wrap Logo in a Box */
@@ -85,11 +86,28 @@
 }
 
 /* Make Menu Horizontal */
+/* Ensure Menu Items Stay Inside Screen */
 .nav-menu {
     list-style: none;
     display: flex;
     gap: 15px;
+    flex-wrap: wrap; /* Prevents items from going off-screen */
+    justify-content: center; /* Center menu items */
 }
+
+/* On Mobile, Stack Menu Items Vertically */
+@media (max-width: 768px) {
+    .nav-menu {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-menu a {
+        display: block;
+        padding: 10px;
+    }
+}
+
 
 /* Style Menu Links */
 .nav-menu a {
