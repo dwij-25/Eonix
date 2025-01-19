@@ -48,47 +48,63 @@
 
 
         /* Navigation Bar */
-/* Navbar Fix */
+/* Navbar Wrapper (Box Layout) */
 .navbar {
     display: flex;
-    align-items: center; /* Align logo & menu vertically */
-    justify-content: flex-start; /* Align items to the left */
+    align-items: center;
+    justify-content: space-between; /* Space between logo & menu */
     padding: 10px 20px;
-    background-color: #0a0a0a;
+    background-color: #111; /* Dark futuristic background */
+    border-radius: 10px; /* Rounded corners for a modern look */
+    box-shadow: 0 4px 10px rgba(0, 255, 255, 0.3); /* Soft neon glow */
+    margin: 10px auto; /* Center the navbar */
+    width: 90%; /* Adjust width */
 }
 
-/* Reduce space between logo & menu */
-.logo {
-    margin-right: 20px; /* Adjust spacing */
+/* Wrap Logo in a Box */
+.logo-box {
+    background: #222; /* Darker box for contrast */
+    padding: 10px;
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: inset 0 0 8px rgba(255, 255, 255, 0.1); /* Inner glow */
 }
 
-/* Adjust the logo size */
+/* Adjust Logo Size */
 .logo img {
-    width: 70px;  /* Smaller size */
+    width: 120px;  /* Increase logo size */
     height: auto;
+    display: block;
 }
 
-/* Make menu items appear in one row */
+/* Wrap Menu in a Box */
+.menu-box {
+    background: #222;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: inset 0 0 8px rgba(255, 255, 255, 0.1);
+}
+
+/* Make Menu Horizontal */
 .nav-menu {
     list-style: none;
     display: flex;
-    gap: 15px; /* Reduce gap between menu items */
-    flex-wrap: wrap; /* Prevents items from going off-screen */
+    gap: 15px;
 }
 
-/* Style menu links */
+/* Style Menu Links */
 .nav-menu a {
     text-decoration: none;
     color: white;
     font-size: 16px;
     font-weight: bold;
+    padding: 5px 10px;
     transition: 0.3s;
-    padding: 5px 10px; /* Add padding for better spacing */
 }
 
 .nav-menu a:hover {
     color: cyan;
 }
+
         nav {
             
             background: rgba(0, 0, 0, 0.8);
@@ -211,19 +227,24 @@
 <body>
 
     <!-- Navigation -->
-    <header>
+ <header>
     <nav class="navbar">
-        <a href="index.html" class="logo">
-            <img src="logo.jpg" alt="Team Logo">
-        </a>
-        <ul class="nav-menu">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#gallery">Gallery</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
+        <div class="logo-box">
+            <a href="index.html" class="logo">
+                <img src="images/logo.jpg" alt="Team Logo">
+            </a>
+        </div>
+        <div class="menu-box">
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
     </nav>
 </header>
+
 
 
 
