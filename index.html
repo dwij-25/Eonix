@@ -49,31 +49,33 @@
 
         /* Navigation Bar */
 /* Navbar Wrapper (Box Layout) */
-/* Navbar Fix: Full Width */
+/* Navbar: Reduce Space Between Logo & Menu */
 .navbar {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-between; /* Reduce space between logo & menu */
     padding: 10px 20px;
     background-color: #111;
-    border-radius: 0; /* Remove rounded corners */
+    border-radius: 0;
     box-shadow: 0 4px 10px rgba(0, 255, 255, 0.3);
-    width: 100vw; /* Extend to full width */
-    margin: 0; /* Remove margin */
+    width: 100vw;
+    margin: 0;
 }
 
 /* Wrap Logo in a Box */
 .logo-box {
     background: #222; /* Darker box for contrast */
-    padding: 10px;
+    padding: 5px 10px; /* Reduce padding to save space */
     border-radius: 8px; /* Rounded corners */
-    box-shadow: inset 0 0 8px rgba(255, 255, 255, 0.1); /* Inner glow */
+    box-shadow: inset 0 0 8px rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 /* Adjust Logo Size */
-/* Adjust Logo Size (Responsive) */
 .logo img {
-    width: 120px;  /* Default size */
+    width: 100px; /* Slightly smaller for better spacing */
     height: auto;
     display: block;
 }
@@ -81,7 +83,7 @@
 /* Make Logo Smaller on Mobile */
 @media (max-width: 768px) {
     .logo img {
-        width: 80px;  /* Reduce size for small screens */
+        width: 80px; /* Reduce size for small screens */
     }
 }
 
@@ -254,21 +256,23 @@
 
     <!-- Navigation -->
  <header>
-    <nav class="navbar">
-        <div class="logo-box">
-            <a href="index.html" class="logo">
-                <img src="logo.jpg" alt="Team Logo">
-            </a>
-        </div>
-        <div class="menu-box">
-            <ul class="nav-menu">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#gallery">Gallery</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
+   <nav class="navbar">
+    <div class="logo-box">
+        <a href="index.html">
+            <img src="images/logo.jpg" alt="Team Logo">
+        </a>
+    </div>
+
+    <!-- Hamburger Icon for Mobile -->
+    <div class="mobile-menu" onclick="toggleMenu()">☰</div>
+
+    <ul class="nav-menu">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
 </header>
 
 
@@ -336,6 +340,10 @@
 
     <!-- JavaScript -->
     <script>
+        function toggleMenu() {
+    var menu = document.querySelector(".nav-menu");
+    menu.classList.toggle("active");
+}
         document.querySelector('.btn').addEventListener('click', function() {
             alert("Registrations Opening Soon!");
         });
