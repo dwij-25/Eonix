@@ -81,23 +81,21 @@
 .nav-menu {
     list-style: none;
     display: flex;
-    gap: 15px; /* Reduce gap between menu items */
-    flex-wrap: wrap; /* Prevents items from going off-screen */
-    /* Media Query for small screens */
-@media (max-width: 768px) {
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+@media (max-width: 768px) { /* ✅ Fix: Move to Line 100 */
     .nav-menu {
-        flex-direction: column;   /* Stack the items vertically */
-        align-items: center;      /* Center-align items */
-        gap: 10px;                /* Add some space between items */
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
     }
-
-    /* If you want to adjust other things like font-size of links inside .nav-menu */
     .nav-menu a {
-        font-size: 18px;          /* Adjust font size for mobile */
+        font-size: 18px;
     }
 }
 
-}
 
 /* Style menu links */
 .nav-menu a {
@@ -140,6 +138,12 @@
 
         /* Hero Section */
         .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            padding: 20px;
            /* Set background image only for the Home section */
 #home {
     background: url('bgtry4.jpg') no-repeat center/cover;
@@ -150,7 +154,7 @@
     flex-direction: column;
     padding: 20px;
     position: relative;
-}
+
 
 /* Optional: Add a semi-transparent overlay for better readability */
 #home::before {
@@ -251,8 +255,8 @@
 <body>
 
     <!-- Navigation -->
+ <nav class="navbar"> <!-- ✅ Fix: Line 329 -->
     <header>
-    <nav class="navbar">
         <a href="index.html" class="logo">
             <img src="logo.jpg" alt="Team Logo">
         </a>
@@ -319,7 +323,8 @@
     <!-- Contact -->
     <section id="contact" class="section">
         <h2>Contact Us</h2>
-        <p>Email: dwijpancholi@gmail.com</p>
+       <p>Email: <a href="mailto:dwijpancholi@gmail.com">dwijpancholi@gmail.com</a></p> <!-- ✅ Fix: Line 366 -->
+
     </section>
 
     <!-- Footer -->
@@ -329,9 +334,12 @@
 
     <!-- JavaScript -->
     <script>
-        document.querySelector('.btn').addEventListener('click', function() {
-            alert("Registrations Opening Soon!");
-        });
+  document.querySelectorAll('.btn').forEach(button => {
+    button.addEventListener('click', function() { /* ✅ Fix: Line 391 */
+        alert("Registrations Opening Soon!");
+    });
+});
+
     </script>
 
 </body>
