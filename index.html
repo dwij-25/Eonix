@@ -370,30 +370,6 @@
 </style>
         <button class="btn register-btn">Register Now</button>
     </div>
-        <section id="home" class="hero">
-    <h1 class="animated-text">Eonix Robotics Workshop</h1>
-    <p>Build your own Transformer-inspired Line-Follower Robot!</p>
-    <button class="btn" onclick="scrollToRegister()">Join Now</button>
-</section>
-
-<!-- Register Box -->
-<section id="register-box" class="section">
-    <div class="register-box">
-        <img src="your-uploaded-image.jpg" alt="Robot Image" class="register-img">
-        <p class="register-text">
-            Join our robotics workshop and build your own Transformer-inspired line-following robot! 
-            Our hands-on learning experience combines AI, robotics, and fun challenges.
-        </p>
-        <button class="btn register-btn">Register Now</button>
-    </div>
-</section>
-
-<script>
-    function scrollToRegister() {
-        document.getElementById('register-box').scrollIntoView({ behavior: 'smooth' });
-    }
-</script>
-
 </section>
 
 
@@ -458,7 +434,34 @@
         }
         window.onload = typeEffect;
     </script>
+    <!-- Hero Section (Home) -->
+<section id="home" class="hero">
+    <h1 class="animated-text">Eonix Robotics Workshop</h1>
+    <p>Build your own Transformer-inspired Line-Follower Robot!</p>
+    <!-- Join Now Button with onclick event to scroll to Register Box -->
+    <button class="btn" onclick="scrollToRegister()">Join Now</button>
+</section>
+
+<!-- Register Box Section (where users can register) -->
+<section id="register-box" class="section">
+    <div class="register-box">
+        <img src="your-uploaded-image.jpg" alt="Robot Image" class="register-img">
+        <p class="register-text">
+            Join our robotics workshop and build your own Transformer-inspired line-following robot! 
+            Our hands-on learning experience combines AI, robotics, and fun challenges.
+        </p>
+        <button class="btn register-btn">Register Now</button>
+    </div>
+</section>
+
+<!-- Add the JavaScript function at the bottom of the page -->
+<script>
+    // Function for smooth scroll to Register Box
+    function scrollToRegister() {
+        document.getElementById('register-box').scrollIntoView({ behavior: 'smooth' });
+    }
+</script>
+
 
 </body>
 </html>
-
