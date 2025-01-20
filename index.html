@@ -215,6 +215,49 @@
             animation: glow 2s infinite alternate;
         }
     </style>
+    <style>/* Hide default menu on mobile */
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+.hamburger {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+    color: cyan;
+}
+
+/* Mobile View (Show Hamburger) */
+@media (max-width: 768px) {
+    .nav-menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background: rgba(0, 0, 0, 0.9);
+        width: 200px;
+        padding: 10px;
+        box-shadow: 0 0 10px cyan;
+        border-radius: 5px;
+        text-align: center;
+    }
+
+    .nav-menu li {
+        padding: 10px;
+    }
+
+    .nav-menu.active {
+        display: flex;
+    }
+
+    .hamburger {
+        display: block;
+    }
+}
+</style>
     <style>
     /* Futuristic Glow Effect for Menu Box & Logo */
 .menu-box {
@@ -266,11 +309,17 @@
 <body>
 
     <!-- Navigation -->
-  <header>
+ <header>
     <nav class="navbar menu-box">
         <a href="index.html" class="logo-box">
             <img src="logo.jpg" alt="Team Logo">
         </a>
+
+        <!-- Hamburger Icon -->
+        <div class="hamburger" onclick="toggleMenu()">
+            ☰
+        </div>
+
         <ul class="nav-menu">
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About</a></li>
@@ -541,6 +590,13 @@
     document.querySelector('.register-box').classList.toggle('flipped');
 }
  </script>
+    <script>
+    function toggleMenu() {
+        const menu = document.querySelector(".nav-menu");
+        menu.classList.toggle("active");
+    }
+</script>
+
 
 </body>
 </html>
