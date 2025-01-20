@@ -304,6 +304,7 @@
     }
 }
 </style>
+    
 </head>
 
 <body>
@@ -499,21 +500,25 @@
 /* Responsive Design */
 @media (max-width: 768px) {
     .register-box {
-        width: 95%;
+        width: 90%;  /* Ensure it takes most of the screen width */
+        margin: 0 auto;  /* Center the box */
+        padding: 15px;
+        box-shadow: 0 0 10px cyan;  /* Adjust shadow for balance */
     }
 
     .register-img {
-        width: 80px;
+        width: 80px; /* Adjust image size for mobile */
     }
 
-    .register-heading {
-        font-size: 16px;
+    .register-text {
+        font-size: 12px; /* Smaller text for mobile */
     }
 
-    .btn {
-        font-size: 14px;
+    .register-btn {
+        font-size: 16px; /* Adjust button size */
     }
 }
+
     </style>
     </div>
 </section>
