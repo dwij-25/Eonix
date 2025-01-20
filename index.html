@@ -126,6 +126,7 @@
 
         /* Hero Section */
         .hero {
+            background: url('https://source.unsplash.com/1600x900/?technology,robot') center/cover no-repeat;
             height: 100vh;
             display: flex;
             align-items: center;
@@ -477,30 +478,27 @@
             <button class="btn register-btn">Register Now</button>
         </div>
         <style>
-      #register-box {
+        #register-box {
     padding: 50px 20px;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: #0a0a0a;
     color: white;
-    width: 100%;
 }
 
-/* Ensure Proper Sizing */
 .register-box {
     width: 80%;
     max-width: 600px;
-    min-height: auto; /* Prevents overflowing */
+    height: 400px;
     position: relative;
     perspective: 1000px;
-    padding: 20px;
 }
 
 /* Front and Back Faces */
 .register-front, .register-back {
     width: 100%;
-    min-height: 100%; /* Ensures adaptive height */
+    height: 100%;
     position: absolute;
     backface-visibility: hidden;
     background: rgba(0, 0, 0, 0.7);
@@ -574,12 +572,13 @@
     background: cyan;
 }
 
-/* 🚀 Fix for Mobile View */
+/* Responsive Design */
 @media (max-width: 768px) {
     .register-box {
-        width: 95%;  /* Take full width */
+        width: 90%;  /* Ensure it takes most of the screen width */
+        margin: 0 auto;  /* Center the box */
         padding: 15px;
-        box-shadow: 0 0 10px cyan;  /* Softer glow */
+        box-shadow: 0 0 10px cyan;  /* Adjust shadow for balance */
     }
 
     .register-img {
@@ -594,7 +593,8 @@
         font-size: 16px; /* Adjust button size */
     }
 }
-</style>
+
+    </style>
     </div>
 </section>
 
