@@ -215,14 +215,60 @@
             animation: glow 2s infinite alternate;
         }
     </style>
+    <style>
+    /* Futuristic Glow Effect for Menu Box & Logo */
+.menu-box {
+    position: relative;
+    background: rgba(0, 0, 0, 0.7); /* Semi-transparent dark */
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+    box-shadow: 0px 5px 15px rgba(0, 255, 255, 0.8); /* Cyan glow */
+}
+
+/* Neon Glow Effect for Logo */
+.logo-box {
+    position: relative;
+    display: inline-block;
+}
+
+.logo-box img {
+    width: 120px; /* Adjust logo size */
+    transition: 0.3s;
+}
+
+/* Additional Neon Light Effect */
+.menu-box::after, .logo-box::after {
+    content: "";
+    position: absolute;
+    bottom: -5px; /* Glow at bottom */
+    left: 10%;
+    width: 80%;
+    height: 5px;
+    background: cyan;
+    box-shadow: 0px 0px 15px 5px cyan;
+    border-radius: 50%;
+    animation: pulseGlow 1.5s infinite alternate;
+}
+
+/* Pulsing Glow Animation */
+@keyframes pulseGlow {
+    0% {
+        box-shadow: 0px 0px 10px 3px cyan;
+    }
+    100% {
+        box-shadow: 0px 0px 20px 5px cyan;
+    }
+}
+</style>
 </head>
 
 <body>
 
     <!-- Navigation -->
-    <header>
-    <nav class="navbar">
-        <a href="index.html" class="logo">
+  <header>
+    <nav class="navbar menu-box">
+        <a href="index.html" class="logo-box">
             <img src="logo.jpg" alt="Team Logo">
         </a>
         <ul class="nav-menu">
@@ -233,6 +279,7 @@
         </ul>
     </nav>
 </header>
+
 
 
 
