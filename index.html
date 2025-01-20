@@ -284,92 +284,141 @@
     </section>
 <section><h2>REGISTRATION</h2></section>
     <!-- Registration -->
-    <section id="register-box" class="section">
+<section id="register-box" class="section">
     <div class="register-box">
-        <img src="bgtry4.jpg" alt="Robot Image" class="register-img">
-        <p class="register-text">
-            Join our robotics workshop and build your own Transformer-inspired line-following robot! 
-            Our hands-on learning experience combines AI, robotics, and fun challenges.
-        </p>
+        <!-- Front Side -->
+        <div class="register-front">
+            <h2 class="register-heading">Ready to Build Your Own Robot?</h2>
+            <img src="bgtry4.jpg" alt="Robot Image" class="register-img">
+            <p class="register-text">
+                Join our robotics workshop and build your own Transformer-inspired line-following robot! 
+                Our hands-on learning experience combines AI, robotics, and fun challenges.
+            </p>
+            <button class="btn explore-btn" onclick="flipBox()">Explore</button>
+        </div>
+
+        <!-- Back Side (Hidden Initially) -->
+        <div class="register-back">
+            <h2 class="register-heading">Workshop Details</h2>
+            <p><strong>Date:</strong> February 2025</p>
+            <p><strong>Venue:</strong> 146, SALITER</p>
+            <p><strong>Level:</strong> Beginner to Advanced</p>
+            <button class="btn register-btn">Register Now</button>
+        </div>
         <style>
-    /* Register Box Section */
-    #register-box {
-        padding: 50px 20px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background-color: #0a0a0a;
-        color: white;
-    }
+        #register-box {
+    padding: 50px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #0a0a0a;
+    color: white;
+}
 
+.register-box {
+    width: 80%;
+    max-width: 600px;
+    height: 400px;
+    position: relative;
+    perspective: 1000px;
+}
+
+/* Front and Back Faces */
+.register-front, .register-back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+    background: rgba(0, 0, 0, 0.7);
+    border: 2px solid cyan;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 0 20px cyan;
+    transition: transform 0.6s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Hide Back Side */
+.register-back {
+    transform: rotateY(180deg);
+}
+
+/* Flip Effect */
+.register-box.flipped .register-front {
+    transform: rotateY(180deg);
+}
+
+.register-box.flipped .register-back {
+    transform: rotateY(0deg);
+}
+
+/* Register Image */
+.register-img {
+    width: 100px;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+/* Headings */
+.register-heading {
+    font-size: 18px;
+    color: cyan;
+    margin-bottom: 10px;
+}
+
+/* Buttons */
+.btn {
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+    border-radius: 5px;
+}
+
+.explore-btn {
+    background: cyan;
+    color: black;
+}
+
+.explore-btn:hover {
+    background: lime;
+}
+
+.register-btn {
+    background: lime;
+    color: black;
+}
+
+.register-btn:hover {
+    background: cyan;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
     .register-box {
-        background: rgba(0, 0, 0, 0.7); /* Semi-transparent black */
-        border: 2px solid cyan;
-        border-radius: 10px;
-        padding: 20px;
-        width: 80%; /* Make it responsive */
-        max-width: 600px; /* Limit max width */
-        text-align: center;
-        box-shadow: 0 0 20px cyan;
-        transition: all 0.3s ease-in-out;
-    }
-
-    .register-box:hover {
-        box-shadow: 0 0 30px lime;
-        border-color: lime;
+        width: 95%;
     }
 
     .register-img {
-        width: 100px; /* Small image size */
-        height: auto;
-        border-radius: 5px;
-        margin-bottom: 15px;
+        width: 80px;
     }
 
-    .register-text {
+    .register-heading {
+        font-size: 16px;
+    }
+
+    .btn {
         font-size: 14px;
-        margin-bottom: 20px;
-        color: #ccc; /* Lighter text for readability */
     }
-
-    .register-btn {
-        padding: 12px 24px;
-        background: cyan;
-        color: black;
-        border: none;
-        font-size: 18px;
-        cursor: pointer;
-        transition: 0.3s;
-        font-weight: bold;
-        border-radius: 5px;
-    }
-
-    .register-btn:hover {
-        background: lime;
-        box-shadow: 0 0 10px lime;
-    }
-
-    /* Media Queries for Responsiveness */
-    @media (max-width: 768px) {
-        .register-box {
-            width: 95%; /* Ensure it fits smaller screens */
-            padding: 15px;
-        }
-
-        .register-img {
-            width: 80px; /* Adjust image size for mobile */
-        }
-
-        .register-text {
-            font-size: 12px; /* Smaller text for mobile */
-        }
-
-        .register-btn {
-            font-size: 16px; /* Smaller button text */
-        }
-    }
-</style>
-        <button class="btn register-btn">Register Now</button>
+}
+    </style>
     </div>
 </section>
 
@@ -441,6 +490,10 @@
         document.getElementById('register-box').scrollIntoView({ behavior: 'smooth' });
     }
 </script>
+    function flipBox() {
+    document.querySelector('.register-box').classList.toggle('flipped');
+}
+
 
 </body>
 </html>
