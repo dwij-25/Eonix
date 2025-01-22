@@ -537,11 +537,19 @@ Earn a certificate and GTU activity points upon completion!
 
 /* Register Image */
 .register-img {
-    width: 100px;
+    width: 150px; /* Larger image */
     height: auto;
     border-radius: 5px;
     margin-bottom: 15px;
 }
+
+/* Responsive for Mobile */
+@media (max-width: 768px) {
+    .register-img {
+        width: 120px; /* Slightly smaller on mobile */
+    }
+}
+
 
 /* Headings */
 .register-heading {
@@ -586,10 +594,6 @@ Earn a certificate and GTU activity points upon completion!
         margin: 0 auto;  /* Center the box */
         padding: 15px;
         box-shadow: 0 0 10px cyan;  /* Adjust shadow for balance */
-    }
-
-    .register-img {
-        width: 80px; /* Adjust image size for mobile */
     }
 
     .register-text {
